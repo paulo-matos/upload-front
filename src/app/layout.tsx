@@ -23,9 +23,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  
   // Loading state for the application, used to reload the list
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false)
   const handleLoading = (state: boolean) => {
     setLoading(state)
   }
@@ -33,19 +32,17 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${inter.className} bg-white-100 text-gray-700`}>
-        <main className='grid min-h-screen grid-rows-[125px,_1fr]'>
-
-          {/* Top */}          
+        <main className="grid min-h-screen grid-rows-[125px,_1fr]">
+          {/* Top */}
           <FilePicker loading={loading} handleLoading={handleLoading} />
 
           {/* Bottom */}
-          <div className='flex-1 justify-center items-center text-center bg-white-100 py-10 px-10'>
+          <div className="flex-1 items-center justify-center bg-white-100 px-10 py-10 text-center">
             <TableContents loading={loading} handleLoading={handleLoading} />
           </div>
 
           {/* Alertas */}
           {children}
-
         </main>
       </body>
     </html>
