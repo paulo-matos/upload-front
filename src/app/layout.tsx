@@ -3,8 +3,6 @@
 import './globals.css'
 import 'react-toastify/dist/ReactToastify.css'
 
-import type { Metadata } from 'next'
-
 import { useState } from 'react'
 import { Inter } from 'next/font/google'
 
@@ -12,11 +10,6 @@ import { FilePicker } from '@/components/FilePicker'
 import { TableContents } from '@/components/TableContents'
 
 const inter = Inter({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'Upload de imagens',
-  description: 'Aplicação para upload de imagens diretamente para o servidor',
-}
 
 export default function RootLayout({
   children,
@@ -31,6 +24,9 @@ export default function RootLayout({
 
   return (
     <html lang="pt-BR">
+      <head>
+        <title>Aplicação Upload</title>
+      </head>
       <body className={`${inter.className} bg-white-100 text-gray-700`}>
         <main className="grid min-h-screen grid-rows-[125px,_1fr]">
           {/* Top */}
